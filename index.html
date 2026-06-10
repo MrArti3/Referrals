@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -61,11 +61,26 @@
             transition: all 0.3s;
             padding: 0.5rem 1rem;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         nav a:hover {
             color: #ffd700;
             background: rgba(76, 175, 80, 0.1);
+        }
+
+        nav a.active {
+            color: #ffd700;
+            background: rgba(76, 175, 80, 0.2);
+        }
+
+        /* Tabs */
+        .tabs {
+            display: none;
+        }
+
+        .tabs.active {
+            display: block;
         }
 
         /* Header Section */
@@ -259,16 +274,15 @@
             box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
         }
 
-        .delete-btn {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        /* COMMUNITY TAB STYLES */
+        .community-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .delete-btn:hover {
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-        }
-
-        /* Community Section */
-        .community-section {
+        .community-card {
             background: rgba(20, 25, 50, 0.8);
             backdrop-filter: blur(10px);
             padding: 2.5rem;
@@ -277,7 +291,7 @@
             border: 1px solid rgba(76, 175, 80, 0.3);
         }
 
-        .community-section h3 {
+        .community-card h3 {
             background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -287,10 +301,257 @@
             font-weight: 700;
         }
 
-        .stats {
+        /* Leaderboard */
+        .leaderboard-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .leaderboard-item {
+            background: rgba(10, 14, 39, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid #ffd700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .leaderboard-rank {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            min-width: 40px;
+        }
+
+        .leaderboard-info {
+            flex: 1;
+            margin-left: 1rem;
+        }
+
+        .leaderboard-name {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .leaderboard-stats {
+            color: #d0d0d0;
+            font-size: 0.9rem;
+        }
+
+        .leaderboard-points {
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            color: #0a0e27;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        /* Chat Section */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            height: 600px;
+        }
+
+        .messages-box {
+            flex: 1;
+            background: rgba(10, 14, 39, 0.9);
+            border-radius: 8px;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .message {
+            background: rgba(76, 175, 80, 0.15);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .message-author {
+            color: #ffd700;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .message-text {
+            color: #d0d0d0;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .message-time {
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .chat-input-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input-group input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid rgba(76, 175, 80, 0.4);
+            border-radius: 8px;
+            background: rgba(10, 14, 39, 0.9);
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .chat-input-group input::placeholder {
+            color: #888;
+        }
+
+        .chat-input-group button {
+            width: auto;
+            padding: 1rem 2rem;
+        }
+
+        /* Member Profiles */
+        .members-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .member-card {
+            background: rgba(10, 14, 39, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 5px solid #ffd700;
+        }
+
+        .member-card:hover {
+            background: rgba(10, 14, 39, 0.95);
+            border-color: #ffd700;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .member-avatar {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-name {
+            color: #ffd700;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: #4caf50;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-stats {
+            color: #d0d0d0;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* Discussion Threads */
+        .threads-list {
+            display: flex;
+            flex-direction: column;
             gap: 1.5rem;
+        }
+
+        .thread-item {
+            background: rgba(10, 14, 39, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid #4caf50;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .thread-item:hover {
+            background: rgba(10, 14, 39, 0.95);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+        }
+
+        .thread-title {
+            color: #ffd700;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .thread-author {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .thread-content {
+            color: #d0d0d0;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .thread-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .thread-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(10, 14, 39, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .thread-input-group label {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        .thread-input-group input,
+        .thread-input-group textarea {
+            padding: 1rem;
+            border: 2px solid rgba(76, 175, 80, 0.4);
+            border-radius: 8px;
+            background: rgba(10, 14, 39, 0.9);
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .thread-input-group button {
+            width: 100%;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             margin-bottom: 2rem;
         }
 
@@ -314,78 +575,6 @@
             font-weight: 700;
         }
 
-        /* Members Section */
-        .members-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .member-item {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1.25rem;
-            border-radius: 8px;
-            border-left: 5px solid #ffd700;
-        }
-
-        .member-item h4 {
-            color: #ffd700;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .member-item p {
-            color: #d0d0d0;
-            font-size: 0.95rem;
-        }
-
-        .invite-section {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .invite-section label {
-            display: block;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            color: #ffd700;
-            font-size: 1rem;
-        }
-
-        .invite-input-group {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .invite-input-group input {
-            flex: 1;
-            padding: 1rem;
-            border: 2px solid rgba(76, 175, 80, 0.4);
-            border-radius: 8px;
-            font-size: 1rem;
-            background: rgba(10, 14, 39, 0.9);
-            color: #ffffff;
-        }
-
-        .invite-input-group input::placeholder {
-            color: #888;
-        }
-
-        .invite-input-group input:focus {
-            outline: none;
-            border-color: #ffd700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .invite-input-group button {
-            flex: 0 1 auto;
-            width: auto;
-            padding: 1rem 2rem;
-        }
-
         /* Footer */
         footer {
             background: rgba(20, 25, 50, 0.95);
@@ -405,17 +594,22 @@
             margin-bottom: 0.75rem;
         }
 
-        footer p:last-child {
-            font-size: 0.95rem;
-            color: #999;
-        }
-
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .main-grid {
                 grid-template-columns: 1fr;
             }
 
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
             nav {
                 flex-direction: column;
                 gap: 1.5rem;
@@ -435,34 +629,12 @@
                 font-size: 2rem;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .chat-container {
+                height: auto;
             }
 
-            .stat-card h4 {
-                font-size: 2rem;
-            }
-
-            .link-url {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .link-buttons {
-                width: 100%;
-            }
-
-            .copy-btn, .delete-btn {
-                flex: 1;
-                padding: 0.75rem 1rem;
-            }
-
-            .invite-input-group {
-                flex-direction: column;
-            }
-
-            .invite-input-group button {
-                width: 100%;
+            .messages-box {
+                max-height: 400px;
             }
         }
     </style>
@@ -473,76 +645,150 @@
         <nav>
             <h1>💰 Crypto Passive Income</h1>
             <ul>
-                <li><a href="#referrals">My Links</a></li>
-                <li><a href="#community">Community</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a class="nav-link active" onclick="switchTab('referrals')">My Links</a></li>
+                <li><a class="nav-link" onclick="switchTab('community')">Community</a></li>
+                <li><a class="nav-link" onclick="switchTab('about')">About</a></li>
             </ul>
         </nav>
 
-        <!-- Hero Section -->
-        <div class="hero">
-            <h2>Build Your Passive Income Network</h2>
-            <p>Share crypto opportunities, staking rewards, and DeFi platforms. Earn together as your network grows.</p>
+        <!-- REFERRALS TAB -->
+        <div id="referrals" class="tabs active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <h2>Build Your Passive Income Network</h2>
+                <p>Share crypto opportunities, staking rewards, and DeFi platforms. Earn together as your network grows.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="main-grid">
+                <!-- Referral Links Section -->
+                <div class="referral-section">
+                    <h3>⛓️ Crypto Referral Links</h3>
+                    
+                    <div class="input-group">
+                        <label for="referralName">Platform Name</label>
+                        <input type="text" id="referralName" placeholder="e.g., Staking Pool, DeFi Protocol, Exchange">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="referralUrl">Referral URL</label>
+                        <input type="url" id="referralUrl" placeholder="https://example.com/ref/your-code">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="referralDescription">APY / Rewards Info</label>
+                        <textarea id="referralDescription" rows="4" placeholder="e.g., 12% APY on staking, 5% commission on referrals..."></textarea>
+                    </div>
+
+                    <button onclick="addReferralLink()">+ Add Link</button>
+
+                    <div class="referral-links-list" id="referralLinksList">
+                        <!-- Links will be added here -->
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="referral-section">
+                    <h3>📊 Your Stats</h3>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4 id="totalLinks">0</h4>
+                            <p>Active Links</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="totalMembers">1</h4>
+                            <p>Network Members</p>
+                        </div>
+                    </div>
+
+                    <div class="input-group" style="margin-top: 2rem;">
+                        <label for="inviteEmail">Invite to Network</label>
+                        <input type="email" id="inviteEmail" placeholder="partner@example.com">
+                    </div>
+                    <button onclick="inviteToNetwork()">Send Invite</button>
+                </div>
+            </div>
         </div>
 
-        <!-- Main Grid -->
-        <div class="main-grid">
-            <!-- Referral Links Section -->
-            <div class="referral-section" id="referrals">
-                <h3>⛓️ Crypto Referral Links</h3>
-                
-                <div class="input-group">
-                    <label for="referralName">Platform Name</label>
-                    <input type="text" id="referralName" placeholder="e.g., Staking Pool, DeFi Protocol, Exchange">
+        <!-- COMMUNITY TAB -->
+        <div id="community" class="tabs">
+            <div class="hero">
+                <h2>👥 Community Hub</h2>
+                <p>Connect with members, share opportunities, and grow together!</p>
+            </div>
+
+            <div class="community-grid">
+                <!-- Leaderboard -->
+                <div class="community-card">
+                    <h3>🏆 Leaderboard</h3>
+                    <div class="leaderboard-list" id="leaderboardList">
+                        <!-- Populated by JS -->
+                    </div>
                 </div>
 
-                <div class="input-group">
-                    <label for="referralUrl">Referral URL</label>
-                    <input type="url" id="referralUrl" placeholder="https://example.com/ref/your-code">
-                </div>
-
-                <div class="input-group">
-                    <label for="referralDescription">APY / Rewards Info</label>
-                    <textarea id="referralDescription" rows="4" placeholder="e.g., 12% APY on staking, 5% commission on referrals..."></textarea>
-                </div>
-
-                <button onclick="addReferralLink()">+ Add Link</button>
-
-                <div class="referral-links-list" id="referralLinksList">
-                    <!-- Links will be added here -->
+                <!-- Member Profiles -->
+                <div class="community-card">
+                    <h3>👥 Members</h3>
+                    <div class="members-grid" id="membersList">
+                        <!-- Populated by JS -->
+                    </div>
                 </div>
             </div>
 
-            <!-- Community Section -->
-            <div class="community-section" id="community">
-                <h3>👥 Your Network</h3>
-
-                <div class="stats">
-                    <div class="stat-card">
-                        <h4 id="totalLinks">0</h4>
-                        <p>Active Links</p>
+            <!-- Chat Section -->
+            <div class="community-card" style="margin-bottom: 2rem;">
+                <h3>💬 Community Chat</h3>
+                <div class="chat-container">
+                    <div class="messages-box" id="messagesBox">
+                        <!-- Messages populated by JS -->
                     </div>
-                    <div class="stat-card">
-                        <h4 id="totalMembers">1</h4>
-                        <p>Network Members</p>
+                    <div class="chat-input-group">
+                        <input type="text" id="chatInput" placeholder="Share your thoughts...">
+                        <button onclick="sendMessage()">Send</button>
                     </div>
                 </div>
+            </div>
 
-                <h4 style="color: #ffd700; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 700;">Community Members</h4>
-                <div class="members-list">
-                    <div class="member-item">
-                        <h4>👑 You (Network Owner)</h4>
-                        <p>Building passive income streams</p>
-                    </div>
+            <!-- Discussion Threads -->
+            <div class="community-card">
+                <h3>🧵 Discussion Threads</h3>
+                
+                <div class="thread-input-group">
+                    <label for="threadTitle">Start New Discussion</label>
+                    <input type="text" id="threadTitle" placeholder="Discussion title...">
+                    <textarea id="threadContent" rows="3" placeholder="Share your topic or question..."></textarea>
+                    <button onclick="createThread()">Post Discussion</button>
                 </div>
 
-                <div class="invite-section">
-                    <label for="inviteEmail">Invite Partner</label>
-                    <div class="invite-input-group">
-                        <input type="email" id="inviteEmail" placeholder="partner@example.com">
-                        <button onclick="inviteToTeam()">Send</button>
-                    </div>
+                <div class="threads-list" id="threadsList">
+                    <!-- Threads populated by JS -->
                 </div>
+            </div>
+        </div>
+
+        <!-- ABOUT TAB -->
+        <div id="about" class="tabs">
+            <div class="hero">
+                <h2>About This Network</h2>
+                <p>A community dedicated to building passive income through crypto opportunities and referrals.</p>
+            </div>
+            <div class="community-card">
+                <h3>ℹ️ About</h3>
+                <p style="color: #d0d0d0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    Welcome to the Crypto Passive Income Network! This is a platform where members share verified referral links to crypto platforms, staking pools, and DeFi protocols that generate passive income.
+                </p>
+                <p style="color: #d0d0d0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    <strong style="color: #ffd700;">How it works:</strong><br>
+                    • Share your favorite crypto opportunities in the referral section<br>
+                    • Invite friends to join your network<br>
+                    • Earn rewards through referral commissions<br>
+                    • Connect with other members in the Community Hub<br>
+                    • Discuss strategies and opportunities with the group
+                </p>
+                <p style="color: #d0d0d0; font-size: 1.1rem; line-height: 1.8;">
+                    <strong style="color: #ffd700;">Disclaimer:</strong> This is for informational purposes only. Do your own research before investing. Crypto investments carry risk.
+                </p>
             </div>
         </div>
 
@@ -554,17 +800,81 @@
     </div>
 
     <script>
-        // Initialize from localStorage
-        let referrals = JSON.parse(localStorage.getItem('referrals')) || [];
-        let invites = JSON.parse(localStorage.getItem('invites')) || [];
+        // Initialize data
+        let referrals = [
+            {
+                id: 1,
+                name: "Binance Staking",
+                url: "https://www.binance.com/ref/EXAMPLE123",
+                description: "Up to 30% APY on staking • 5% commission on referrals",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 2,
+                name: "Lido Finance",
+                url: "https://lido.fi/ref/EXAMPLE456",
+                description: "Liquid staking for ETH • 3.5% APY • Zero fees",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 3,
+                name: "Aave Protocol",
+                url: "https://aave.com/ref/EXAMPLE789",
+                description: "Lending/borrowing • Variable 2-8% APY • DeFi leader",
+                createdAt: new Date().toLocaleDateString()
+            }
+        ];
 
-        // Display existing referrals on page load
+        let members = [
+            { id: 1, name: "You", role: "Network Owner", avatar: "👑", referrals: 0, earnings: "$2,450" },
+            { id: 2, name: "Alex", role: "Member", avatar: "💼", referrals: 12, earnings: "$840" },
+            { id: 3, name: "Jordan", role: "Member", avatar: "🚀", referrals: 8, earnings: "$560" },
+            { id: 4, name: "Casey", role: "Member", avatar: "💎", referrals: 15, earnings: "$1,050" },
+            { id: 5, name: "Morgan", role: "Member", avatar: "⭐", referrals: 5, earnings: "$350" },
+        ];
+
+        let messages = [
+            { author: "Alex", text: "Just hit $500 in passive income this month! 🎉", time: "2 hours ago" },
+            { author: "Jordan", text: "Anyone else noticing higher staking rewards lately?", time: "1 hour ago" },
+            { author: "Casey", text: "Loving the Lido Finance setup. Consistent returns!", time: "45 min ago" },
+        ];
+
+        let threads = [
+            { id: 1, title: "Best Staking Platforms for 2024", author: "Alex", content: "What are your favorite platforms for staking? I'm looking to diversify...", replies: 5, time: "2 days ago" },
+            { id: 2, title: "DeFi Security Tips", author: "Casey", content: "Let's discuss best practices for securing your DeFi wallets...", replies: 8, time: "1 day ago" },
+        ];
+
+        let invites = [];
+
+        // Initialize page
         window.addEventListener('DOMContentLoaded', function() {
             displayReferrals();
             updateStats();
+            displayLeaderboard();
+            displayMembers();
+            displayMessages();
+            displayThreads();
             updateLastUpdated();
         });
 
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tabs
+            const allTabs = document.querySelectorAll('.tabs');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active from all nav links
+            const allLinks = document.querySelectorAll('.nav-link');
+            allLinks.forEach(link => link.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active to clicked link
+            event.target.classList.add('active');
+        }
+
+        // REFERRALS FUNCTIONS
         function addReferralLink() {
             const name = document.getElementById('referralName').value;
             const url = document.getElementById('referralUrl').value;
@@ -584,29 +894,13 @@
             };
 
             referrals.push(referral);
-            localStorage.setItem('referrals', JSON.stringify(referrals));
 
-            // Clear inputs
             document.getElementById('referralName').value = '';
             document.getElementById('referralUrl').value = '';
             document.getElementById('referralDescription').value = '';
 
             displayReferrals();
             updateStats();
-            updateLastUpdated();
-        }
-
-        function deleteReferral(id) {
-            referrals = referrals.filter(r => r.id !== id);
-            localStorage.setItem('referrals', JSON.stringify(referrals));
-            displayReferrals();
-            updateStats();
-        }
-
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Link copied to clipboard!');
-            });
         }
 
         function displayReferrals() {
@@ -614,7 +908,7 @@
             list.innerHTML = '';
 
             if (referrals.length === 0) {
-                list.innerHTML = '<p style="color: #888; text-align: center; font-size: 1rem; padding: 2rem; margin-top: 2rem; border: 2px dashed rgba(76, 175, 80, 0.3); border-radius: 8px;">No referral links yet. Add your first opportunity above!</p>';
+                list.innerHTML = '<p style="color: #888; text-align: center; font-size: 1rem; padding: 2rem;">No referral links yet. Add your first opportunity above!</p>';
                 return;
             }
 
@@ -628,7 +922,6 @@
                         <span>${referral.url}</span>
                         <div class="link-buttons">
                             <button class="copy-btn" onclick="copyToClipboard('${referral.url}')">Copy</button>
-                            <button class="delete-btn" onclick="deleteReferral(${referral.id})">Delete</button>
                         </div>
                     </div>
                     <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">Added: ${referral.createdAt}</p>
@@ -637,29 +930,155 @@
             });
         }
 
-        function inviteToTeam() {
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('Link copied to clipboard!');
+        }
+
+        function inviteToNetwork() {
             const email = document.getElementById('inviteEmail').value;
-
             if (!email) {
-                alert('Please enter an email address');
+                alert('Please enter an email');
                 return;
             }
-
             if (invites.includes(email)) {
-                alert('This person has already been invited');
+                alert('Already invited');
                 return;
             }
-
             invites.push(email);
-            localStorage.setItem('invites', JSON.stringify(invites));
-            alert(`Invitation sent to ${email}! (Note: This is a demo. In a real app, an email would be sent.)`);
             document.getElementById('inviteEmail').value = '';
+            alert(`Invite sent to ${email}!`);
             updateStats();
         }
 
+        // COMMUNITY FUNCTIONS
+        function displayLeaderboard() {
+            const list = document.getElementById('leaderboardList');
+            list.innerHTML = '';
+
+            const sorted = [...members].sort((a, b) => parseInt(b.earnings) - parseInt(a.earnings));
+
+            sorted.forEach((member, index) => {
+                const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '⭐';
+                const item = document.createElement('div');
+                item.className = 'leaderboard-item';
+                item.innerHTML = `
+                    <div class="leaderboard-rank">${medal}</div>
+                    <div class="leaderboard-info">
+                        <div class="leaderboard-name">${member.name}</div>
+                        <div class="leaderboard-stats">${member.referrals} referrals</div>
+                    </div>
+                    <div class="leaderboard-points">${member.earnings}</div>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        function displayMembers() {
+            const list = document.getElementById('membersList');
+            list.innerHTML = '';
+
+            members.forEach(member => {
+                const card = document.createElement('div');
+                card.className = 'member-card';
+                card.innerHTML = `
+                    <div class="member-avatar">${member.avatar}</div>
+                    <div class="member-name">${member.name}</div>
+                    <div class="member-role">${member.role}</div>
+                    <div class="member-stats">
+                        📍 ${member.referrals} Referrals<br>
+                        💰 ${member.earnings}
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        function displayMessages() {
+            const box = document.getElementById('messagesBox');
+            box.innerHTML = '';
+
+            messages.forEach(msg => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'message';
+                msgDiv.innerHTML = `
+                    <div class="message-author">${msg.author}</div>
+                    <div class="message-text">${msg.text}</div>
+                    <div class="message-time">${msg.time}</div>
+                `;
+                box.appendChild(msgDiv);
+            });
+
+            box.scrollTop = box.scrollHeight;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value;
+
+            if (!text.trim()) return;
+
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            messages.push({
+                author: "You",
+                text: text,
+                time: timeStr
+            });
+
+            input.value = '';
+            displayMessages();
+        }
+
+        function displayThreads() {
+            const list = document.getElementById('threadsList');
+            list.innerHTML = '';
+
+            threads.forEach(thread => {
+                const item = document.createElement('div');
+                item.className = 'thread-item';
+                item.innerHTML = `
+                    <div class="thread-title">${thread.title}</div>
+                    <div class="thread-author">by ${thread.author}</div>
+                    <div class="thread-content">${thread.content}</div>
+                    <div class="thread-meta">
+                        <span>💬 ${thread.replies} replies</span>
+                        <span>${thread.time}</span>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        function createThread() {
+            const title = document.getElementById('threadTitle').value;
+            const content = document.getElementById('threadContent').value;
+
+            if (!title || !content) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            threads.unshift({
+                id: Date.now(),
+                title: title,
+                author: "You",
+                content: content,
+                replies: 0,
+                time: "now"
+            });
+
+            document.getElementById('threadTitle').value = '';
+            document.getElementById('threadContent').value = '';
+
+            displayThreads();
+        }
+
+        // UTILITY FUNCTIONS
         function updateStats() {
             document.getElementById('totalLinks').textContent = referrals.length;
-            document.getElementById('totalMembers').textContent = (1 + invites.length);
+            document.getElementById('totalMembers').textContent = (members.length + invites.length);
         }
 
         function updateLastUpdated() {
@@ -671,6 +1090,18 @@
             });
             document.getElementById('lastUpdated').textContent = today;
         }
+
+        // Allow Enter key to send messages
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatInput = document.getElementById('chatInput');
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
