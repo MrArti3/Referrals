@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Referrals - Earn Together</title>
+    <title>Crypto Passive Income - Referral Network</title>
     <style>
         * {
             margin: 0;
@@ -13,9 +13,9 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1729 100%);
             min-height: 100vh;
-            color: #333;
+            color: #e0e0e0;
         }
 
         .container {
@@ -26,18 +26,23 @@
 
         /* Navigation */
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(20, 25, 50, 0.8);
+            backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             border-radius: 10px;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         nav h1 {
-            color: #667eea;
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 1.8rem;
         }
 
@@ -49,34 +54,39 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #4caf50;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #667eea;
+            color: #ffd700;
         }
 
         /* Header Section */
         .hero {
-            background: white;
+            background: rgba(20, 25, 50, 0.6);
+            backdrop-filter: blur(10px);
             padding: 3rem;
             border-radius: 10px;
             margin-bottom: 2rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         .hero h2 {
             font-size: 2.5rem;
-            color: #667eea;
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
         }
 
         .hero p {
             font-size: 1.1rem;
-            color: #666;
+            color: #b0b0b0;
             margin-bottom: 1.5rem;
         }
 
@@ -90,14 +100,19 @@
 
         /* Referral Links Section */
         .referral-section {
-            background: white;
+            background: rgba(20, 25, 50, 0.6);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         .referral-section h3 {
-            color: #667eea;
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
@@ -111,38 +126,47 @@
 
         .input-group label {
             font-weight: 600;
-            color: #333;
+            color: #e0e0e0;
         }
 
         .input-group input,
         .input-group textarea {
             padding: 0.75rem;
-            border: 2px solid #e0e0e0;
+            border: 2px solid rgba(76, 175, 80, 0.3);
             border-radius: 5px;
             font-size: 1rem;
+            background: rgba(10, 14, 39, 0.8);
+            color: #e0e0e0;
             transition: border-color 0.3s;
+        }
+
+        .input-group input::placeholder,
+        .input-group textarea::placeholder {
+            color: #666;
         }
 
         .input-group input:focus,
         .input-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
         }
 
         button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            color: #0a0e27;
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
         }
 
         button:active {
@@ -157,38 +181,38 @@
         }
 
         .referral-link-item {
-            background: #f8f9fa;
+            background: rgba(10, 14, 39, 0.8);
             padding: 1rem;
             border-radius: 5px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #4caf50;
         }
 
         .referral-link-item h4 {
-            color: #667eea;
+            color: #ffd700;
             margin-bottom: 0.5rem;
         }
 
         .referral-link-item p {
-            color: #666;
+            color: #b0b0b0;
             font-size: 0.9rem;
             margin-bottom: 0.75rem;
         }
 
         .link-url {
-            background: white;
+            background: rgba(76, 175, 80, 0.1);
             padding: 0.5rem;
             border-radius: 3px;
             word-break: break-all;
             font-family: monospace;
             font-size: 0.85rem;
-            color: #667eea;
+            color: #4caf50;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid rgba(76, 175, 80, 0.3);
         }
 
         .copy-btn, .delete-btn {
-            background: #667eea;
             color: white;
             border: none;
             padding: 0.4rem 0.8rem;
@@ -196,22 +220,32 @@
             font-size: 0.8rem;
             cursor: pointer;
             margin-left: 0.5rem;
+            font-weight: 600;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
         }
 
         .delete-btn {
-            background: #e74c3c;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
         }
 
         /* Community Section */
         .community-section {
-            background: white;
+            background: rgba(20, 25, 50, 0.6);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         .community-section h3 {
-            color: #667eea;
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
@@ -224,20 +258,23 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            color: #0a0e27;
             padding: 1rem;
             border-radius: 5px;
             text-align: center;
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.2);
         }
 
         .stat-card h4 {
             font-size: 2rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .stat-card p {
             font-size: 0.9rem;
+            font-weight: 600;
         }
 
         /* Members Section */
@@ -248,30 +285,37 @@
         }
 
         .member-item {
-            background: #f8f9fa;
+            background: rgba(10, 14, 39, 0.8);
             padding: 1rem;
             border-radius: 5px;
-            border-left: 4px solid #764ba2;
+            border-left: 4px solid #ffd700;
         }
 
         .member-item h4 {
-            color: #333;
+            color: #ffd700;
             margin-bottom: 0.25rem;
         }
 
         .member-item p {
-            color: #666;
+            color: #b0b0b0;
             font-size: 0.9rem;
         }
 
         /* Footer */
         footer {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(20, 25, 50, 0.8);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
-            color: #666;
+            color: #b0b0b0;
             margin-top: 2rem;
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        footer p:first-child {
+            color: #ffd700;
+            font-weight: 600;
         }
 
         /* Responsive */
@@ -305,7 +349,7 @@
     <div class="container">
         <!-- Navigation -->
         <nav>
-            <h1>🎯 My Referrals</h1>
+            <h1>💰 Crypto Passive Income</h1>
             <ul>
                 <li><a href="#referrals">My Links</a></li>
                 <li><a href="#community">Community</a></li>
@@ -315,19 +359,19 @@
 
         <!-- Hero Section -->
         <div class="hero">
-            <h2>Welcome to My Referral Network!</h2>
-            <p>Share your favorite products, services, and opportunities. Build a thriving community and earn together.</p>
+            <h2>Build Your Passive Income Network</h2>
+            <p>Share crypto opportunities, staking rewards, and DeFi platforms. Earn together as your network grows.</p>
         </div>
 
         <!-- Main Grid -->
         <div class="main-grid">
             <!-- Referral Links Section -->
             <div class="referral-section" id="referrals">
-                <h3>📎 My Referral Links</h3>
+                <h3>⛓️ Crypto Referral Links</h3>
                 
                 <div class="input-group">
-                    <label for="referralName">Referral Name</label>
-                    <input type="text" id="referralName" placeholder="e.g., Crypto Exchange, Cloud Storage">
+                    <label for="referralName">Platform Name</label>
+                    <input type="text" id="referralName" placeholder="e.g., Staking Pool, DeFi Protocol, Exchange">
                 </div>
 
                 <div class="input-group">
@@ -336,11 +380,11 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="referralDescription">Description</label>
-                    <textarea id="referralDescription" rows="3" placeholder="Describe what this referral is about..."></textarea>
+                    <label for="referralDescription">APY / Rewards Info</label>
+                    <textarea id="referralDescription" rows="3" placeholder="e.g., 12% APY on staking, 5% commission on referrals..."></textarea>
                 </div>
 
-                <button onclick="addReferralLink()">Add Referral Link</button>
+                <button onclick="addReferralLink()">+ Add Link</button>
 
                 <div class="referral-links-list" id="referralLinksList">
                     <!-- Links will be added here -->
@@ -349,32 +393,32 @@
 
             <!-- Community Section -->
             <div class="community-section" id="community">
-                <h3>👥 Community</h3>
+                <h3>👥 Your Network</h3>
 
                 <div class="stats">
                     <div class="stat-card">
                         <h4 id="totalLinks">0</h4>
-                        <p>Total Links</p>
+                        <p>Active Links</p>
                     </div>
                     <div class="stat-card">
                         <h4 id="totalMembers">1</h4>
-                        <p>Community Members</p>
+                        <p>Network Members</p>
                     </div>
                 </div>
 
-                <h4 style="color: #333; margin-bottom: 1rem;">Community Members</h4>
+                <h4 style="color: #ffd700; margin-bottom: 1rem;">Community Members</h4>
                 <div class="members-list">
                     <div class="member-item">
-                        <h4>👤 You (Admin)</h4>
-                        <p>Started this referral network</p>
+                        <h4>👑 You (Network Owner)</h4>
+                        <p>Building passive income streams</p>
                     </div>
                 </div>
 
-                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e0e0e0;">
-                    <label for="inviteEmail" style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: #333;">Invite to Community</label>
+                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(76, 175, 80, 0.3);">
+                    <label for="inviteEmail" style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: #e0e0e0;">Invite Partner</label>
                     <div style="display: flex; gap: 0.5rem;">
-                        <input type="email" id="inviteEmail" placeholder="friend@example.com" style="flex: 1;">
-                        <button onclick="inviteToTeam()">Invite</button>
+                        <input type="email" id="inviteEmail" placeholder="partner@example.com" style="flex: 1;">
+                        <button onclick="inviteToTeam()">Send</button>
                     </div>
                 </div>
             </div>
@@ -382,7 +426,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>🚀 Built with ❤️ | Share, Earn, and Grow Together</p>
+            <p>💎 Building Wealth Together | Passive Income Starts Here</p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem;">Last updated: <span id="lastUpdated">Today</span></p>
         </footer>
     </div>
@@ -448,7 +492,7 @@
             list.innerHTML = '';
 
             if (referrals.length === 0) {
-                list.innerHTML = '<p style="color: #999; text-align: center;">No referral links yet. Add your first one above!</p>';
+                list.innerHTML = '<p style="color: #666; text-align: center;">No referral links yet. Add your first opportunity above!</p>';
                 return;
             }
 
@@ -465,7 +509,7 @@
                             <button class="delete-btn" onclick="deleteReferral(${referral.id})">Delete</button>
                         </div>
                     </div>
-                    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #999;">Added: ${referral.createdAt}</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #666;">Added: ${referral.createdAt}</p>
                 `;
                 list.appendChild(item);
             });
