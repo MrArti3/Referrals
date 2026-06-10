@@ -274,6 +274,14 @@
             box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
         }
 
+        .delete-btn {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .delete-btn:hover {
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
         /* COMMUNITY TAB STYLES */
         .community-grid {
             display: grid;
@@ -636,6 +644,19 @@
             .messages-box {
                 max-height: 400px;
             }
+
+            .link-url {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .link-buttons {
+                width: 100%;
+            }
+
+            .copy-btn, .delete-btn {
+                flex: 1;
+            }
         }
     </style>
 </head>
@@ -693,7 +714,7 @@
                     
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <h4 id="totalLinks">0</h4>
+                            <h4 id="totalLinks">12</h4>
                             <p>Active Links</p>
                         </div>
                         <div class="stat-card">
@@ -800,48 +821,104 @@
     </div>
 
     <script>
-        // Initialize data
-        let referrals = [
+        // Initialize data - Your referral links
+        let referrals = JSON.parse(localStorage.getItem('referrals')) || [
             {
                 id: 1,
-                name: "Binance Staking",
-                url: "https://www.binance.com/ref/EXAMPLE123",
-                description: "Up to 30% APY on staking • 5% commission on referrals",
+                name: "BetFury",
+                url: "https://betfury.io/",
+                description: "Crypto gaming with daily earnings",
                 createdAt: new Date().toLocaleDateString()
             },
             {
                 id: 2,
-                name: "Lido Finance",
-                url: "https://lido.fi/ref/EXAMPLE456",
-                description: "Liquid staking for ETH • 3.5% APY • Zero fees",
+                name: "Final Autoclaim",
+                url: "https://www.finalauto.info/",
+                description: "Auto-claiming rewards platform",
                 createdAt: new Date().toLocaleDateString()
             },
             {
                 id: 3,
-                name: "Aave Protocol",
-                url: "https://aave.com/ref/EXAMPLE789",
-                description: "Lending/borrowing • Variable 2-8% APY • DeFi leader",
+                name: "Chainers.io",
+                url: "https://chainers.io/",
+                description: "Earn crypto from tasks and activities",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 4,
+                name: "Rollercoin",
+                url: "https://rollercoin.com/",
+                description: "Mining simulator game with real rewards",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 5,
+                name: "Cointiply",
+                url: "https://cointiply.com/",
+                description: "Earn cryptocurrency completing tasks",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 6,
+                name: "Freecash",
+                url: "https://freecash.com/",
+                description: "Get paid for surveys and tasks",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 7,
+                name: "Fire Faucet",
+                url: "https://firefaucet.com/",
+                description: "High-paying crypto faucet",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 8,
+                name: "SimpleBits",
+                url: "https://simplebits.io/",
+                description: "Earn BTC from various activities",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 9,
+                name: "Vie Faucet",
+                url: "https://viefaucet.com/",
+                description: "Automated faucet earnings",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 10,
+                name: "Honeygain",
+                url: "https://www.honeygain.com/",
+                description: "Passive income from your internet",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 11,
+                name: "Uprock",
+                url: "https://uprock.com/",
+                description: "Earn from your idle bandwidth",
+                createdAt: new Date().toLocaleDateString()
+            },
+            {
+                id: 12,
+                name: "TraffMonetizer",
+                url: "https://traffmonetizer.com/",
+                description: "Monetize your internet traffic",
                 createdAt: new Date().toLocaleDateString()
             }
         ];
 
         let members = [
-            { id: 1, name: "You", role: "Network Owner", avatar: "👑", referrals: 0, earnings: "$2,450" },
-            { id: 2, name: "Alex", role: "Member", avatar: "💼", referrals: 12, earnings: "$840" },
-            { id: 3, name: "Jordan", role: "Member", avatar: "🚀", referrals: 8, earnings: "$560" },
-            { id: 4, name: "Casey", role: "Member", avatar: "💎", referrals: 15, earnings: "$1,050" },
-            { id: 5, name: "Morgan", role: "Member", avatar: "⭐", referrals: 5, earnings: "$350" },
+            { id: 1, name: "You", role: "Network Owner", avatar: "👑", referrals: 0, earnings: "$0" },
         ];
 
         let messages = [
-            { author: "Alex", text: "Just hit $500 in passive income this month! 🎉", time: "2 hours ago" },
-            { author: "Jordan", text: "Anyone else noticing higher staking rewards lately?", time: "1 hour ago" },
-            { author: "Casey", text: "Loving the Lido Finance setup. Consistent returns!", time: "45 min ago" },
+            { author: "Welcome Bot", text: "Welcome to the community! Share your referral links and connect with others.", time: "Welcome" },
         ];
 
         let threads = [
-            { id: 1, title: "Best Staking Platforms for 2024", author: "Alex", content: "What are your favorite platforms for staking? I'm looking to diversify...", replies: 5, time: "2 days ago" },
-            { id: 2, title: "DeFi Security Tips", author: "Casey", content: "Let's discuss best practices for securing your DeFi wallets...", replies: 8, time: "1 day ago" },
+            { id: 1, title: "Share Your Best Passive Income Tips", author: "Community", content: "What are your best strategies for maximizing passive income? Share your tips here!", replies: 0, time: "Now" },
         ];
 
         let invites = [];
@@ -859,18 +936,13 @@
 
         // Tab switching
         function switchTab(tabName) {
-            // Hide all tabs
             const allTabs = document.querySelectorAll('.tabs');
             allTabs.forEach(tab => tab.classList.remove('active'));
 
-            // Remove active from all nav links
             const allLinks = document.querySelectorAll('.nav-link');
             allLinks.forEach(link => link.classList.remove('active'));
 
-            // Show selected tab
             document.getElementById(tabName).classList.add('active');
-
-            // Add active to clicked link
             event.target.classList.add('active');
         }
 
@@ -894,6 +966,7 @@
             };
 
             referrals.push(referral);
+            localStorage.setItem('referrals', JSON.stringify(referrals));
 
             document.getElementById('referralName').value = '';
             document.getElementById('referralUrl').value = '';
@@ -922,12 +995,20 @@
                         <span>${referral.url}</span>
                         <div class="link-buttons">
                             <button class="copy-btn" onclick="copyToClipboard('${referral.url}')">Copy</button>
+                            <button class="delete-btn" onclick="deleteReferral(${referral.id})">Delete</button>
                         </div>
                     </div>
                     <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">Added: ${referral.createdAt}</p>
                 `;
                 list.appendChild(item);
             });
+        }
+
+        function deleteReferral(id) {
+            referrals = referrals.filter(r => r.id !== id);
+            localStorage.setItem('referrals', JSON.stringify(referrals));
+            displayReferrals();
+            updateStats();
         }
 
         function copyToClipboard(text) {
