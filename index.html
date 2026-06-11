@@ -94,36 +94,6 @@
             box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
             border: 1px solid rgba(76, 175, 80, 0.3);
         }
-	<div id="referrals" class="tabs active">
-    
-    <div class="hero">
-        <h2>Build Your Passive Income Network</h2>
-        <p>Verified crypto opportunities, staking rewards, and DeFi platforms. Earn together as your network grows.</p>
-    </div>
-
-    <div class="referral-section">
-        <h3>📊 Network Stats</h3>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h4 id="totalLinks">12</h4>
-                <p>Active Links</p>
-            </div>
-            <div class="stat-card">
-                <h4 id="totalMembers">1</h4>
-                <p>Network Members</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-grid">
-        <div class="referral-section">
-            <h3>⛓️ Crypto Referral Links</h3>
-            <div class="referral-links-list" id="referralLinksList">
-                </div>
-        </div>
-    </div>
-</div>
-
         .hero h2 {
             font-size: 3rem;
             background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
@@ -704,35 +674,29 @@
 
         <!-- REFERRALS TAB -->
         <div id="referrals" class="tabs active">
-            <!-- Hero Section -->
-            <div class="hero">
-                <h2>Build Your Passive Income Network</h2>
-                <p>Share crypto opportunities, staking rewards, and DeFi platforms. Earn together as your network grows.</p>
-            </div>
-
-            <!-- Main Grid -->
-            <div class="main-grid">
-                <!-- Referral Links Section -->
-                <div class="referral-section">
-                    <h3>⛓️ Crypto Referral Links</h3>
-                    
-                    onclick="addReferralLink()">+ Add Link</button>
-
-                    <div class="referral-links-list" id="referralLinksList">
-                        <!-- Links will be added here -->
+            <div class="referral-section" style="margin-bottom: 2rem;">
+                <h3>📊 Network Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4 id="totalLinks">0</h4>
+                        <p>Active Links</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 id="totalMembers">0</h4>
+                        <p>Network Members</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Stats Section -->
+            <div class="hero">
+                <h2>Build Your Passive Income Network</h2>
+                <p>Verified crypto opportunities, staking rewards, and DeFi platforms.</p>
+            </div>
+
+            <div class="main-grid">
                 <div class="referral-section">
-                    <h3>📊 Your Stats</h3>
-                    
-
-                    <div class="input-group" style="margin-top: 2rem;">
-                        <label for="inviteEmail">Invite to Network</label>
-                        <input type="email" id="inviteEmail" placeholder="partner@example.com">
-                    </div>
-                    <button onclick="inviteToNetwork()">Send Invite</button>
+                    <h3>⛓️ Crypto Referral Links</h3>
+                    <div class="referral-links-list" id="referralLinksList"></div>
                 </div>
             </div>
         </div>
@@ -745,50 +709,24 @@
             </div>
 
             <div class="community-grid">
-                <!-- Leaderboard -->
                 <div class="community-card">
                     <h3>🏆 Leaderboard</h3>
-                    <div class="leaderboard-list" id="leaderboardList">
-                        <!-- Populated by JS -->
-                    </div>
+                    <div class="leaderboard-list" id="leaderboardList"></div>
                 </div>
-
-                <!-- Member Profiles -->
                 <div class="community-card">
                     <h3>👥 Members</h3>
-                    <div class="members-grid" id="membersList">
-                        <!-- Populated by JS -->
-                    </div>
+                    <div class="members-grid" id="membersList"></div>
                 </div>
             </div>
 
-            <!-- Chat Section -->
             <div class="community-card" style="margin-bottom: 2rem;">
                 <h3>💬 Community Chat</h3>
                 <div class="chat-container">
-                    <div class="messages-box" id="messagesBox">
-                        <!-- Messages populated by JS -->
-                    </div>
+                    <div class="messages-box" id="messagesBox"></div>
                     <div class="chat-input-group">
                         <input type="text" id="chatInput" placeholder="Share your thoughts...">
                         <button onclick="sendMessage()">Send</button>
                     </div>
-                </div>
-            </div>
-
-            <!-- Discussion Threads -->
-            <div class="community-card">
-                <h3>🧵 Discussion Threads</h3>
-                
-                <div class="thread-input-group">
-                    <label for="threadTitle">Start New Discussion</label>
-                    <input type="text" id="threadTitle" placeholder="Discussion title...">
-                    <textarea id="threadContent" rows="3" placeholder="Share your topic or question..."></textarea>
-                    <button onclick="createThread()">Post Discussion</button>
-                </div>
-
-                <div class="threads-list" id="threadsList">
-                    <!-- Threads populated by JS -->
                 </div>
             </div>
         </div>
@@ -914,30 +852,56 @@
             }
         ];
 
-        let members = [
-            { id: 1, name: "You", role: "Network Owner", avatar: "👑", referrals: 0, earnings: "$0" },
-        ];
+        // ── API CONFIG ─────────────────────────────────────────
+        const API_URL = 'https://referrals.mrarti3.workers.dev';
 
-        let messages = [
-            { author: "Welcome Bot", text: "Welcome to the community! Share your referral links and connect with others.", time: "Welcome" },
-        ];
-
-        let threads = [
-            { id: 1, title: "Share Your Best Passive Income Tips", author: "Community", content: "What are your best strategies for maximizing passive income? Share your tips here!", replies: 0, time: "Now" },
-        ];
-
+        let members = [];
         let invites = [];
 
         // Initialize page
-        window.addEventListener('DOMContentLoaded', function() {
-            displayReferrals();
-            updateStats();
-            displayLeaderboard();
-            displayMembers();
-            displayMessages();
-            displayThreads();
+        window.addEventListener('DOMContentLoaded', async function() {
+            await loadReferrals();
+            await loadStats();
+            await loadMembers();
+            await loadMessages();
             updateLastUpdated();
+            setInterval(loadMessages, 10000);
         });
+
+        // ── API FUNCTIONS ──────────────────────────────────────
+        async function loadReferrals() {
+            try {
+                const res = await fetch(`${API_URL}/api/referrals`);
+                const data = await res.json();
+                displayReferrals(data);
+            } catch (e) { console.error('Failed to load referrals', e); }
+        }
+
+        async function loadStats() {
+            try {
+                const res = await fetch(`${API_URL}/api/stats`);
+                const data = await res.json();
+                document.getElementById('totalLinks').textContent = data.links;
+                document.getElementById('totalMembers').textContent = data.members;
+            } catch (e) { console.error('Failed to load stats', e); }
+        }
+
+        async function loadMembers() {
+            try {
+                const res = await fetch(`${API_URL}/api/members`);
+                members = await res.json();
+                displayLeaderboard();
+                displayMembers();
+            } catch (e) { console.error('Failed to load members', e); }
+        }
+
+        async function loadMessages() {
+            try {
+                const res = await fetch(`${API_URL}/api/messages`);
+                const data = await res.json();
+                displayMessages(data);
+            } catch (e) { console.error('Failed to load messages', e); }
+        }
 
         // Tab switching
         function switchTab(tabName) {
@@ -952,41 +916,12 @@
         }
 
         // REFERRALS FUNCTIONS
-        function addReferralLink() {
-            const name = document.getElementById('referralName').value;
-            const url = document.getElementById('referralUrl').value;
-            const description = document.getElementById('referralDescription').value;
-
-            if (!name || !url) {
-                alert('Please fill in all fields');
-                return;
-            }
-
-            const referral = {
-                id: Date.now(),
-                name: name,
-                url: url,
-                description: description,
-                createdAt: new Date().toLocaleDateString()
-            };
-
-            referrals.push(referral);
-            localStorage.setItem('referrals', JSON.stringify(referrals));
-
-            document.getElementById('referralName').value = '';
-            document.getElementById('referralUrl').value = '';
-            document.getElementById('referralDescription').value = '';
-
-            displayReferrals();
-            updateStats();
-        }
-
-        function displayReferrals() {
+        function displayReferrals(referrals) {
             const list = document.getElementById('referralLinksList');
             list.innerHTML = '';
 
-            if (referrals.length === 0) {
-                list.innerHTML = '<p style="color: #888; text-align: center; font-size: 1rem; padding: 2rem;">No referral links yet. Add your first opportunity above!</p>';
+            if (!referrals || referrals.length === 0) {
+                list.innerHTML = '<p style="color: #888; text-align: center; font-size: 1rem; padding: 2rem;">No referral links yet.</p>';
                 return;
             }
 
@@ -995,7 +930,7 @@
                 item.className = 'referral-link-item';
                 item.innerHTML = `
                     <h4>${referral.name}</h4>
-                    <p>${referral.description}</p>
+                    <p>${referral.description || ''}</p>
                     <div class="link-url">
                         <span>${referral.url}</span>
                         <div class="link-buttons">
@@ -1003,38 +938,21 @@
                             <button class="delete-btn" onclick="deleteReferral(${referral.id})">Delete</button>
                         </div>
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">Added: ${referral.createdAt}</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">Added: ${new Date(referral.created_at).toLocaleDateString()}</p>
                 `;
                 list.appendChild(item);
             });
         }
 
-        function deleteReferral(id) {
-            referrals = referrals.filter(r => r.id !== id);
-            localStorage.setItem('referrals', JSON.stringify(referrals));
-            displayReferrals();
-            updateStats();
+        async function deleteReferral(id) {
+            await fetch(`${API_URL}/api/referrals/${id}`, { method: 'DELETE' });
+            await loadReferrals();
+            await loadStats();
         }
 
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text);
             alert('Link copied to clipboard!');
-        }
-
-        function inviteToNetwork() {
-            const email = document.getElementById('inviteEmail').value;
-            if (!email) {
-                alert('Please enter an email');
-                return;
-            }
-            if (invites.includes(email)) {
-                alert('Already invited');
-                return;
-            }
-            invites.push(email);
-            document.getElementById('inviteEmail').value = '';
-            alert(`Invite sent to ${email}!`);
-            updateStats();
         }
 
         // COMMUNITY FUNCTIONS
@@ -1080,93 +998,58 @@
             });
         }
 
-        function displayMessages() {
+        function displayMessages(messages) {
             const box = document.getElementById('messagesBox');
+            const wasAtBottom = box.scrollHeight - box.clientHeight <= box.scrollTop + 5;
             box.innerHTML = '';
+
+            if (!messages || messages.length === 0) {
+                box.innerHTML = '<p style="color:#888;text-align:center;padding:2rem;">No messages yet. Say hello!</p>';
+                return;
+            }
 
             messages.forEach(msg => {
                 const msgDiv = document.createElement('div');
                 msgDiv.className = 'message';
+                const time = msg.timestamp ? new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
                 msgDiv.innerHTML = `
                     <div class="message-author">${msg.author}</div>
                     <div class="message-text">${msg.text}</div>
-                    <div class="message-time">${msg.time}</div>
+                    <div class="message-time">${time}</div>
                 `;
                 box.appendChild(msgDiv);
             });
 
-            box.scrollTop = box.scrollHeight;
+            if (wasAtBottom) box.scrollTop = box.scrollHeight;
         }
 
-        function sendMessage() {
+        async function sendMessage() {
             const input = document.getElementById('chatInput');
-            const text = input.value;
+            const text = input.value.trim();
+            if (!text) return;
 
-            if (!text.trim()) return;
-
-            const now = new Date();
-            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-            messages.push({
-                author: "You",
-                text: text,
-                time: timeStr
-            });
+            const author = localStorage.getItem('chatName') || promptForName();
+            if (!author) return;
 
             input.value = '';
-            displayMessages();
-        }
-
-        function displayThreads() {
-            const list = document.getElementById('threadsList');
-            list.innerHTML = '';
-
-            threads.forEach(thread => {
-                const item = document.createElement('div');
-                item.className = 'thread-item';
-                item.innerHTML = `
-                    <div class="thread-title">${thread.title}</div>
-                    <div class="thread-author">by ${thread.author}</div>
-                    <div class="thread-content">${thread.content}</div>
-                    <div class="thread-meta">
-                        <span>💬 ${thread.replies} replies</span>
-                        <span>${thread.time}</span>
-                    </div>
-                `;
-                list.appendChild(item);
+            await fetch(`${API_URL}/api/messages`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ author, text }),
             });
+            await loadMessages();
         }
 
-        function createThread() {
-            const title = document.getElementById('threadTitle').value;
-            const content = document.getElementById('threadContent').value;
-
-            if (!title || !content) {
-                alert('Please fill in all fields');
-                return;
+        function promptForName() {
+            const name = prompt('Enter your display name for chat:');
+            if (name && name.trim()) {
+                localStorage.setItem('chatName', name.trim());
+                return name.trim();
             }
-
-            threads.unshift({
-                id: Date.now(),
-                title: title,
-                author: "You",
-                content: content,
-                replies: 0,
-                time: "now"
-            });
-
-            document.getElementById('threadTitle').value = '';
-            document.getElementById('threadContent').value = '';
-
-            displayThreads();
+            return null;
         }
 
         // UTILITY FUNCTIONS
-        function updateStats() {
-            document.getElementById('totalLinks').textContent = referrals.length;
-            document.getElementById('totalMembers').textContent = (members.length + invites.length);
-        }
-
         function updateLastUpdated() {
             const today = new Date().toLocaleDateString('en-US', { 
                 weekday: 'long', 
