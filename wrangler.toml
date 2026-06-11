@@ -2,15 +2,7 @@ name = "referrals"
 main = "src/index.js"
 compatibility_date = "2024-01-01"
 
-[env.production]
-name = "referrals"
-route = "https://referrals.example.com/*"
-
 [[d1_databases]]
 binding = "DB"
-database_name = "referrals"
-database_id = "referrals"
-
-[build]
-command = "npm install"
-cwd = "."
+database_name = "referrals-db"
+database_id = "10b97a61-8390-4518-9994-6400a00162d1"

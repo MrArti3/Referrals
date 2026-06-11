@@ -1,7 +1,6 @@
-<!-- v2 -->
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="p:domain_verify" content="1b21937e08220a6d95d5eceef0b8d087"/>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Passive Income - Referral Network</title>
@@ -25,7 +24,6 @@
             padding: 20px;
         }
 
-        /* Navigation */
         nav {
             background: rgba(20, 25, 50, 0.95);
             backdrop-filter: blur(10px);
@@ -75,7 +73,6 @@
             background: rgba(76, 175, 80, 0.2);
         }
 
-        /* Tabs */
         .tabs {
             display: none;
         }
@@ -84,7 +81,6 @@
             display: block;
         }
 
-        /* Header Section */
         .hero {
             background: rgba(20, 25, 50, 0.8);
             backdrop-filter: blur(10px);
@@ -112,16 +108,13 @@
             line-height: 1.6;
         }
 
-
-        /* Main Content Grid */
         .main-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 2.5rem;
             margin-bottom: 2rem;
         }
 
-        /* Referral Links Section */
         .referral-section {
             background: rgba(20, 25, 50, 0.8);
             backdrop-filter: blur(10px);
@@ -141,72 +134,11 @@
             font-weight: 700;
         }
 
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .input-group label {
-            font-weight: 700;
-            color: #ffd700;
-            font-size: 1rem;
-        }
-
-        .input-group input,
-        .input-group textarea {
-            padding: 1rem;
-            border: 2px solid rgba(76, 175, 80, 0.4);
-            border-radius: 8px;
-            font-size: 1rem;
-            background: rgba(10, 14, 39, 0.9);
-            color: #ffffff;
-            transition: all 0.3s;
-            line-height: 1.5;
-        }
-
-        .input-group input::placeholder,
-        .input-group textarea::placeholder {
-            color: #888;
-        }
-
-        .input-group input:focus,
-        .input-group textarea:focus {
-            outline: none;
-            border-color: #ffd700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-            background: rgba(10, 14, 39, 0.95);
-        }
-
-        button {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            color: #0a0e27;
-            border: none;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        /* Referral Links Display */
         .referral-links-list {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .referral-link-item {
@@ -255,7 +187,7 @@
             flex-shrink: 0;
         }
 
-        .copy-btn, .delete-btn {
+        .copy-btn {
             color: white;
             border: none;
             padding: 0.6rem 1rem;
@@ -265,9 +197,6 @@
             font-weight: 600;
             transition: all 0.3s;
             white-space: nowrap;
-        }
-
-        .copy-btn {
             background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
         }
 
@@ -275,15 +204,6 @@
             box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
         }
 
-        .delete-btn {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        }
-
-        .delete-btn:hover {
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-        }
-
-        /* COMMUNITY TAB STYLES */
         .community-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -310,7 +230,6 @@
             font-weight: 700;
         }
 
-        /* Leaderboard */
         .leaderboard-list {
             display: flex;
             flex-direction: column;
@@ -361,7 +280,6 @@
             min-width: 120px;
         }
 
-        /* Chat Section */
         .chat-container {
             display: flex;
             flex-direction: column;
@@ -392,14 +310,12 @@
             color: #ffd700;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            font-size: 0.95rem;
         }
 
         .message-text {
             color: #d0d0d0;
             font-size: 1rem;
             line-height: 1.5;
-            margin-bottom: 0.5rem;
         }
 
         .message-time {
@@ -429,12 +345,18 @@
         .chat-input-group button {
             width: auto;
             padding: 1rem 2rem;
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            color: #0a0e27;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
         }
 
-        /* Member Profiles */
         .members-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 1rem;
         }
 
@@ -443,15 +365,7 @@
             padding: 1.5rem;
             border-radius: 8px;
             border: 1px solid rgba(76, 175, 80, 0.3);
-            cursor: pointer;
-            transition: all 0.3s;
             border-left: 5px solid #ffd700;
-        }
-
-        .member-card:hover {
-            background: rgba(10, 14, 39, 0.95);
-            border-color: #ffd700;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
         }
 
         .member-avatar {
@@ -478,85 +392,6 @@
             line-height: 1.8;
         }
 
-        /* Discussion Threads */
-        .threads-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .thread-item {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 5px solid #4caf50;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .thread-item:hover {
-            background: rgba(10, 14, 39, 0.95);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
-        }
-
-        .thread-title {
-            color: #ffd700;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .thread-author {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .thread-content {
-            color: #d0d0d0;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .thread-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #888;
-            font-size: 0.85rem;
-        }
-
-        .thread-input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .thread-input-group label {
-            color: #ffd700;
-            font-weight: 700;
-        }
-
-        .thread-input-group input,
-        .thread-input-group textarea {
-            padding: 1rem;
-            border: 2px solid rgba(76, 175, 80, 0.4);
-            border-radius: 8px;
-            background: rgba(10, 14, 39, 0.9);
-            color: #ffffff;
-            font-size: 1rem;
-        }
-
-        .thread-input-group button {
-            width: 100%;
-        }
-
-        /* Stats */
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -570,7 +405,6 @@
             padding: 1.5rem;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.25);
         }
 
         .stat-card h4 {
@@ -584,7 +418,6 @@
             font-weight: 700;
         }
 
-        /* Footer */
         footer {
             background: rgba(20, 25, 50, 0.95);
             backdrop-filter: blur(10px);
@@ -603,17 +436,8 @@
             margin-bottom: 0.75rem;
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-
             .community-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .members-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -655,15 +479,15 @@
                 width: 100%;
             }
 
-            .copy-btn, .delete-btn {
-                flex: 1;
+            .copy-btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Navigation -->
         <nav>
             <h1>💰 Crypto Passive Income</h1>
             <ul>
@@ -673,17 +497,16 @@
             </ul>
         </nav>
 
-        <!-- REFERRALS TAB -->
         <div id="referrals" class="tabs active">
             <div class="referral-section" style="margin-bottom: 2rem;">
                 <h3>📊 Network Stats</h3>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <h4 id="totalLinks">0</h4>
+                        <h4 id="totalLinks">12</h4>
                         <p>Active Links</p>
                     </div>
                     <div class="stat-card">
-                        <h4 id="totalMembers">0</h4>
+                        <h4 id="totalMembers">1</h4>
                         <p>Network Members</p>
                     </div>
                 </div>
@@ -702,7 +525,6 @@
             </div>
         </div>
 
-        <!-- COMMUNITY TAB -->
         <div id="community" class="tabs">
             <div class="hero">
                 <h2>👥 Community Hub</h2>
@@ -732,7 +554,6 @@
             </div>
         </div>
 
-        <!-- ABOUT TAB -->
         <div id="about" class="tabs">
             <div class="hero">
                 <h2>About This Network</h2>
@@ -757,7 +578,6 @@
             </div>
         </div>
 
-        <!-- Footer -->
         <footer>
             <p>💎 Building Wealth Together | Passive Income Starts Here</p>
             <p>Last updated: <span id="lastUpdated">Today</span></p>
@@ -765,190 +585,62 @@
     </div>
 
     <script>
-        // Initialize data - Your referral links
-        let referrals = JSON.parse(localStorage.getItem('referrals')) || [
-            {
-                id: 1,
-                name: "BetFury",
-                url: "https://betfury.io/",
-                description: "Crypto gaming with daily earnings",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 2,
-                name: "Final Autoclaim",
-                url: "https://www.finalauto.info/",
-                description: "Auto-claiming rewards platform",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 3,
-                name: "Chainers.io",
-                url: "https://chainers.io/",
-                description: "Earn crypto from tasks and activities",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 4,
-                name: "Rollercoin",
-                url: "https://rollercoin.com/",
-                description: "Mining simulator game with real rewards",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 5,
-                name: "Cointiply",
-                url: "https://cointiply.com/",
-                description: "Earn cryptocurrency completing tasks",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 6,
-                name: "Freecash",
-                url: "https://freecash.com/",
-                description: "Get paid for surveys and tasks",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 7,
-                name: "Fire Faucet",
-                url: "https://firefaucet.com/",
-                description: "High-paying crypto faucet",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 8,
-                name: "SimpleBits",
-                url: "https://simplebits.io/",
-                description: "Earn BTC from various activities",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 9,
-                name: "Vie Faucet",
-                url: "https://viefaucet.com/",
-                description: "Automated faucet earnings",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 10,
-                name: "Honeygain",
-                url: "https://www.honeygain.com/",
-                description: "Passive income from your internet",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 11,
-                name: "Uprock",
-                url: "https://uprock.com/",
-                description: "Earn from your idle bandwidth",
-                createdAt: new Date().toLocaleDateString()
-            },
-            {
-                id: 12,
-                name: "TraffMonetizer",
-                url: "https://traffmonetizer.com/",
-                description: "Monetize your internet traffic",
-                createdAt: new Date().toLocaleDateString()
-            }
+        // Your 12 referral links - saved in localStorage, will NEVER vanish
+        let referrals = [
+            {id: 1, name: "BetFury", url: "https://betfury.io/", description: "Crypto gaming with daily earnings", created_at: "2024-01-01"},
+            {id: 2, name: "Final Autoclaim", url: "https://www.finalauto.info/", description: "Auto-claiming rewards platform", created_at: "2024-01-01"},
+            {id: 3, name: "Chainers.io", url: "https://chainers.io/", description: "Earn crypto from tasks and activities", created_at: "2024-01-01"},
+            {id: 4, name: "Rollercoin", url: "https://rollercoin.com/", description: "Mining simulator game with real rewards", created_at: "2024-01-01"},
+            {id: 5, name: "Cointiply", url: "https://cointiply.com/", description: "Earn cryptocurrency completing tasks", created_at: "2024-01-01"},
+            {id: 6, name: "Freecash", url: "https://freecash.com/", description: "Get paid for surveys and tasks", created_at: "2024-01-01"},
+            {id: 7, name: "Fire Faucet", url: "https://firefaucet.com/", description: "High-paying crypto faucet", created_at: "2024-01-01"},
+            {id: 8, name: "SimpleBits", url: "https://simplebits.io/", description: "Earn BTC from various activities", created_at: "2024-01-01"},
+            {id: 9, name: "Vie Faucet", url: "https://viefaucet.com/", description: "Automated faucet earnings", created_at: "2024-01-01"},
+            {id: 10, name: "Honeygain", url: "https://www.honeygain.com/", description: "Passive income from your internet", created_at: "2024-01-01"},
+            {id: 11, name: "Uprock", url: "https://uprock.com/", description: "Earn from your idle bandwidth", created_at: "2024-01-01"},
+            {id: 12, name: "TraffMonetizer", url: "https://traffmonetizer.com/", description: "Monetize your internet traffic", created_at: "2024-01-01"}
         ];
 
-        // ── API CONFIG ─────────────────────────────────────────
-        const API_URL = 'https://referrals.mrarti3.workers.dev';
+        // Save to localStorage on page load
+        localStorage.setItem('crypto_referrals', JSON.stringify(referrals));
 
-        let members = [];
-        let invites = [];
-
-        // Initialize page
-        window.addEventListener('DOMContentLoaded', async function() {
-            await loadReferrals();
-            await loadStats();
-            await loadMembers();
-            await loadMessages();
-            updateLastUpdated();
-            setInterval(loadMessages, 10000);
-        });
-
-        // ── API FUNCTIONS ──────────────────────────────────────
-        async function loadReferrals() {
-            try {
-                const res = await fetch(`${API_URL}/api/referrals`);
-                const data = await res.json();
-                displayReferrals(data);
-            } catch (e) { console.error('Failed to load referrals', e); }
-        }
-
-        async function loadStats() {
-            try {
-                const res = await fetch(`${API_URL}/api/stats`);
-                const data = await res.json();
-                document.getElementById('totalLinks').textContent = data.links;
-                document.getElementById('totalMembers').textContent = data.members;
-            } catch (e) { console.error('Failed to load stats', e); }
-        }
-
-        async function loadMembers() {
-            try {
-                const res = await fetch(`${API_URL}/api/members`);
-                members = await res.json();
-                displayLeaderboard();
-                displayMembers();
-            } catch (e) { console.error('Failed to load members', e); }
-        }
-
-        async function loadMessages() {
-            try {
-                const res = await fetch(`${API_URL}/api/messages`);
-                const data = await res.json();
-                displayMessages(data);
-            } catch (e) { console.error('Failed to load messages', e); }
-        }
-
-        // Tab switching
-        function switchTab(tabName) {
-            const allTabs = document.querySelectorAll('.tabs');
-            allTabs.forEach(tab => tab.classList.remove('active'));
-
-            const allLinks = document.querySelectorAll('.nav-link');
-            allLinks.forEach(link => link.classList.remove('active'));
-
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        // REFERRALS FUNCTIONS
-        function displayReferrals(referrals) {
-            const list = document.getElementById('referralLinksList');
-            list.innerHTML = '';
-
-            if (!referrals || referrals.length === 0) {
-                list.innerHTML = '<p style="color: #888; text-align: center; font-size: 1rem; padding: 2rem;">No referral links yet.</p>';
-                return;
+        function loadFromStorage() {
+            const saved = localStorage.getItem('crypto_referrals');
+            if (saved) {
+                referrals = JSON.parse(saved);
             }
+        }
 
+        function saveToStorage() {
+            localStorage.setItem('crypto_referrals', JSON.stringify(referrals));
+        }
+
+        function displayReferrals() {
+            const list = document.getElementById('referralLinksList');
+            if (!list) return;
+            list.innerHTML = '';
+            
             referrals.forEach(referral => {
-                const item = document.createElement('div');
-                item.className = 'referral-link-item';
-                item.innerHTML = `
-                    <h4>${referral.name}</h4>
-                    <p>${referral.description || ''}</p>
+                const div = document.createElement('div');
+                div.className = 'referral-link-item';
+                div.innerHTML = `
+                    <h4>${escapeHtml(referral.name)}</h4>
+                    <p>${escapeHtml(referral.description || '')}</p>
                     <div class="link-url">
-                        <span>${referral.url}</span>
+                        <span>${escapeHtml(referral.url)}</span>
                         <div class="link-buttons">
-                            <button class="copy-btn" onclick="copyToClipboard('${referral.url}')">Copy</button>
-                            <button class="delete-btn" onclick="deleteReferral(${referral.id})">Delete</button>
+                            <button class="copy-btn" onclick="copyToClipboard('${escapeHtml(referral.url)}')">Copy</button>
                         </div>
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">Added: ${new Date(referral.created_at).toLocaleDateString()}</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">Added: ${referral.created_at}</p>
                 `;
-                list.appendChild(item);
+                list.appendChild(div);
             });
         }
 
-        async function deleteReferral(id) {
-            await fetch(`${API_URL}/api/referrals/${id}`, { method: 'DELETE' });
-            await loadReferrals();
-            await loadStats();
+        function updateStats() {
+            document.getElementById('totalLinks').textContent = referrals.length;
+            document.getElementById('totalMembers').textContent = '1';
         }
 
         function copyToClipboard(text) {
@@ -956,101 +648,125 @@
             alert('Link copied to clipboard!');
         }
 
-        // COMMUNITY FUNCTIONS
-        function displayLeaderboard() {
-            const list = document.getElementById('leaderboardList');
-            list.innerHTML = '';
-
-            const sorted = [...members].sort((a, b) => parseInt(b.earnings) - parseInt(a.earnings));
-
-            sorted.forEach((member, index) => {
-                const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '⭐';
-                const item = document.createElement('div');
-                item.className = 'leaderboard-item';
-                item.innerHTML = `
-                    <div class="leaderboard-rank">${medal}</div>
-                    <div class="leaderboard-info">
-                        <div class="leaderboard-name">${member.name}</div>
-                        <div class="leaderboard-stats">${member.referrals} referrals</div>
-                    </div>
-                    <div class="leaderboard-points">${member.earnings}</div>
-                `;
-                list.appendChild(item);
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
             });
         }
 
-        function displayMembers() {
-            const list = document.getElementById('membersList');
-            list.innerHTML = '';
-
-            members.forEach(member => {
-                const card = document.createElement('div');
-                card.className = 'member-card';
-                card.innerHTML = `
-                    <div class="member-avatar">${member.avatar}</div>
-                    <div class="member-name">${member.name}</div>
-                    <div class="member-role">${member.role}</div>
-                    <div class="member-stats">
-                        📍 ${member.referrals} Referrals<br>
-                        💰 ${member.earnings}
-                    </div>
-                `;
-                list.appendChild(card);
-            });
+        // Chat functions
+        let messages = [];
+        
+        function loadMessages() {
+            const saved = localStorage.getItem('chat_messages');
+            if (saved) {
+                messages = JSON.parse(saved);
+            }
+            displayMessages();
         }
-
-        function displayMessages(messages) {
+        
+        function saveMessages() {
+            localStorage.setItem('chat_messages', JSON.stringify(messages.slice(-50)));
+        }
+        
+        function displayMessages() {
             const box = document.getElementById('messagesBox');
-            const wasAtBottom = box.scrollHeight - box.clientHeight <= box.scrollTop + 5;
+            if (!box) return;
             box.innerHTML = '';
-
-            if (!messages || messages.length === 0) {
-                box.innerHTML = '<p style="color:#888;text-align:center;padding:2rem;">No messages yet. Say hello!</p>';
+            
+            if (messages.length === 0) {
+                box.innerHTML = '<p style="color: #888; text-align: center; padding: 2rem;">No messages yet. Say hello!</p>';
                 return;
             }
-
+            
             messages.forEach(msg => {
-                const msgDiv = document.createElement('div');
-                msgDiv.className = 'message';
-                const time = msg.timestamp ? new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
-                msgDiv.innerHTML = `
-                    <div class="message-author">${msg.author}</div>
-                    <div class="message-text">${msg.text}</div>
-                    <div class="message-time">${time}</div>
+                const div = document.createElement('div');
+                div.className = 'message';
+                div.innerHTML = `
+                    <div class="message-author">${escapeHtml(msg.author)}</div>
+                    <div class="message-text">${escapeHtml(msg.text)}</div>
+                    <div class="message-time">${msg.time || ''}</div>
                 `;
-                box.appendChild(msgDiv);
+                box.appendChild(div);
             });
-
-            if (wasAtBottom) box.scrollTop = box.scrollHeight;
+            box.scrollTop = box.scrollHeight;
         }
-
-        async function sendMessage() {
+        
+        function sendMessage() {
             const input = document.getElementById('chatInput');
             const text = input.value.trim();
             if (!text) return;
-
-            const author = localStorage.getItem('chatName') || promptForName();
-            if (!author) return;
-
-            input.value = '';
-            await fetch(`${API_URL}/api/messages`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ author, text }),
-            });
-            await loadMessages();
-        }
-
-        function promptForName() {
-            const name = prompt('Enter your display name for chat:');
-            if (name && name.trim()) {
-                localStorage.setItem('chatName', name.trim());
-                return name.trim();
+            
+            let author = localStorage.getItem('chat_name');
+            if (!author) {
+                author = prompt('Enter your display name for chat:');
+                if (!author) return;
+                localStorage.setItem('chat_name', author);
             }
-            return null;
+            
+            messages.push({
+                author: author,
+                text: text,
+                time: new Date().toLocaleTimeString()
+            });
+            
+            saveMessages();
+            displayMessages();
+            input.value = '';
         }
 
-        // UTILITY FUNCTIONS
+        // Members - ONLY YOU
+        let members = [
+            {name: "You", referrals: 12, earnings: "$0", avatar: "👑", role: "Network Owner"}
+        ];
+        
+        function displayLeaderboard() {
+            const list = document.getElementById('leaderboardList');
+            if (!list) return;
+            list.innerHTML = '';
+            members.forEach((m, i) => {
+                const div = document.createElement('div');
+                div.className = 'leaderboard-item';
+                div.innerHTML = `
+                    <div class="leaderboard-rank">👑</div>
+                    <div class="leaderboard-info">
+                        <div class="leaderboard-name">${escapeHtml(m.name)}</div>
+                        <div class="leaderboard-stats">${m.referrals} referrals</div>
+                    </div>
+                    <div class="leaderboard-points">${m.earnings}</div>
+                `;
+                list.appendChild(div);
+            });
+        }
+        
+        function displayMembers() {
+            const list = document.getElementById('membersList');
+            if (!list) return;
+            list.innerHTML = '';
+            members.forEach(m => {
+                const div = document.createElement('div');
+                div.className = 'member-card';
+                div.innerHTML = `
+                    <div class="member-avatar">${m.avatar}</div>
+                    <div class="member-name">${escapeHtml(m.name)}</div>
+                    <div class="member-role">${m.role}</div>
+                    <div class="member-stats">📍 ${m.referrals} Referrals<br>💰 ${m.earnings}</div>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tabs').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
         function updateLastUpdated() {
             const today = new Date().toLocaleDateString('en-US', { 
                 weekday: 'long', 
@@ -1061,7 +777,16 @@
             document.getElementById('lastUpdated').textContent = today;
         }
 
-        // Allow Enter key to send messages
+        // Initialize everything
+        loadFromStorage();
+        displayReferrals();
+        updateStats();
+        loadMessages();
+        displayLeaderboard();
+        displayMembers();
+        updateLastUpdated();
+
+        // Chat enter key
         document.addEventListener('DOMContentLoaded', function() {
             const chatInput = document.getElementById('chatInput');
             if (chatInput) {
