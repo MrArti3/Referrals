@@ -423,6 +423,11 @@
                 return;
             }
             
+            if(name.toLowerCase() === 'mrarti3') {
+                alert('This username is reserved for the founder.');
+                return;
+            }
+            
             try {
                 const res = await fetch(`${API_URL}/api/members`, {
                     method: 'POST',
@@ -474,12 +479,14 @@
                 html = '<div class="loading">No members yet. Be the first to join!</div>';
             } else {
                 members.forEach(m => {
-                    let role = m.name === 'You' ? 'Network Owner' : 'Member';
-                    let avatar = m.name === 'You' ? '👑' : '👤';
-                    // Show "Founder" for you, joined date for everyone else
-                    let joinInfo = m.name === 'You' ? 'Founder' : `Joined: ${new Date(m.created_at).toLocaleDateString()}`;
+                    // Check if this is the founder (database name is "You" or "MrArti3")
+                    let isFounder = (m.name === 'You' || m.name === 'MrArti3');
+                    let displayName = isFounder ? 'MrArti3' : m.name;
+                    let role = isFounder ? 'Network Owner' : 'Member';
+                    let avatar = isFounder ? '👑' : '👤';
+                    let joinInfo = isFounder ? 'Founder' : `Joined: ${new Date(m.created_at).toLocaleDateString()}`;
                     html += `<div class="member-item">
-                        <span><strong>${avatar} ${m.name}</strong></span>
+                        <span><strong>${avatar} ${displayName}</strong></span>
                         <span>${role}</span>
                         <span>${joinInfo}</span>
                     </div>`;
