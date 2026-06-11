@@ -30,7 +30,6 @@
             padding: 1.5rem 2rem;
             border-radius: 12px;
             margin-bottom: 2rem;
-            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -41,7 +40,6 @@
             background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             font-size: 2rem;
             font-weight: 700;
         }
@@ -56,340 +54,39 @@
             text-decoration: none;
             color: #4caf50;
             font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
+            cursor: pointer;
             padding: 0.5rem 1rem;
             border-radius: 5px;
-            cursor: pointer;
         }
 
-        nav a:hover {
-            color: #ffd700;
-            background: rgba(76, 175, 80, 0.1);
-        }
-
-        nav a.active {
+        nav a:hover, nav a.active {
             color: #ffd700;
             background: rgba(76, 175, 80, 0.2);
         }
 
-        .tabs {
-            display: none;
-        }
-
-        .tabs.active {
-            display: block;
-        }
+        .tabs { display: none; }
+        .tabs.active { display: block; }
 
         .hero {
             background: rgba(20, 25, 50, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 3.5rem;
+            padding: 3rem;
             border-radius: 12px;
             margin-bottom: 2rem;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
             border: 1px solid rgba(76, 175, 80, 0.3);
         }
+
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             margin-bottom: 1rem;
-            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.25rem;
             color: #d0d0d0;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .referral-section {
-            background: rgba(20, 25, 50, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .referral-section h3 {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .referral-links-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .referral-link-item {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 5px solid #4caf50;
-        }
-
-        .referral-link-item h4 {
-            color: #ffd700;
-            margin-bottom: 0.75rem;
             font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .referral-link-item p {
-            color: #d0d0d0;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .link-url {
-            background: rgba(76, 175, 80, 0.15);
-            padding: 1rem;
-            border-radius: 6px;
-            word-break: break-all;
-            font-family: monospace;
-            font-size: 0.95rem;
-            color: #4caf50;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid rgba(76, 175, 80, 0.4);
-            gap: 1rem;
-        }
-
-        .link-url span {
-            flex: 1;
-        }
-
-        .link-buttons {
-            display: flex;
-            gap: 0.5rem;
-            flex-shrink: 0;
-        }
-
-        .copy-btn {
-            color: white;
-            border: none;
-            padding: 0.6rem 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            white-space: nowrap;
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-        }
-
-        .copy-btn:hover {
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-        }
-
-        .community-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .community-card {
-            background: rgba(20, 25, 50, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .community-card h3 {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .leaderboard-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .leaderboard-item {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 5px solid #ffd700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .leaderboard-rank {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffd700;
-            min-width: 40px;
-        }
-
-        .leaderboard-info {
-            flex: 1;
-            margin-left: 1rem;
-        }
-
-        .leaderboard-name {
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .leaderboard-stats {
-            color: #d0d0d0;
-            font-size: 0.9rem;
-        }
-
-        .leaderboard-points {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            color: #0a0e27;
-            padding: 0.5rem 1.5rem;
-            border-radius: 6px;
-            font-weight: 700;
-            text-align: center;
-            min-width: 120px;
-        }
-
-        .chat-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            height: 600px;
-        }
-
-        .messages-box {
-            flex: 1;
-            background: rgba(10, 14, 39, 0.9);
-            border-radius: 8px;
-            padding: 1.5rem;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .message {
-            background: rgba(76, 175, 80, 0.15);
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #4caf50;
-        }
-
-        .message-author {
-            color: #ffd700;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .message-text {
-            color: #d0d0d0;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .message-time {
-            color: #888;
-            font-size: 0.8rem;
-        }
-
-        .chat-input-group {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .chat-input-group input {
-            flex: 1;
-            padding: 1rem;
-            border: 2px solid rgba(76, 175, 80, 0.4);
-            border-radius: 8px;
-            background: rgba(10, 14, 39, 0.9);
-            color: #ffffff;
-            font-size: 1rem;
-        }
-
-        .chat-input-group input::placeholder {
-            color: #888;
-        }
-
-        .chat-input-group button {
-            width: auto;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            color: #0a0e27;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .members-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        .member-card {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-            border-left: 5px solid #ffd700;
-        }
-
-        .member-avatar {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .member-name {
-            color: #ffd700;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-role {
-            color: #4caf50;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .member-stats {
-            color: #d0d0d0;
-            font-size: 0.9rem;
-            line-height: 1.8;
         }
 
         .stats-grid {
@@ -408,81 +105,199 @@
         }
 
         .stat-card h4 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
             font-weight: 700;
         }
 
-        .stat-card p {
-            font-size: 1rem;
-            font-weight: 700;
+        .referral-section {
+            background: rgba(20, 25, 50, 0.8);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .referral-section h3 {
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .referral-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .referral-link-item {
+            background: rgba(10, 14, 39, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .referral-link-item h4 {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .referral-link-item p {
+            color: #d0d0d0;
+            margin-bottom: 1rem;
+        }
+
+        .click-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white !important;
+            padding: 0.6rem 1.2rem !important;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .click-link:hover {
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            color: #0a0e27 !important;
+            text-decoration: none !important;
+        }
+
+        .community-card {
+            background: rgba(20, 25, 50, 0.8);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .community-card h3 {
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .members-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .member-item {
+            background: rgba(10, 14, 39, 0.9);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-container {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .messages-box {
+            flex: 1;
+            background: rgba(10, 14, 39, 0.9);
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .message {
+            background: rgba(76, 175, 80, 0.15);
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+        }
+
+        .message-author {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .chat-input-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input-group input {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            background: rgba(10, 14, 39, 0.9);
+            color: white;
+        }
+
+        .chat-input-group button {
+            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
+            color: #0a0e27;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .join-form {
+            background: rgba(10, 14, 39, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .join-form h4 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .join-form input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .join-form button {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
         }
 
         footer {
             background: rgba(20, 25, 50, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             text-align: center;
-            color: #d0d0d0;
             margin-top: 2rem;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        footer p:first-child {
-            color: #ffd700;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
-
-        @media (max-width: 1024px) {
-            .community-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-
-            nav h1 {
-                font-size: 1.5rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .chat-container {
-                height: auto;
-            }
-
-            .messages-box {
-                max-height: 400px;
-            }
-
-            .link-url {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .link-buttons {
-                width: 100%;
-            }
-
-            .copy-btn {
-                width: 100%;
-                text-align: center;
-            }
+            nav { flex-direction: column; gap: 1rem; text-align: center; }
+            nav ul { flex-direction: column; gap: 0.5rem; }
+            .member-item { flex-direction: column; gap: 0.5rem; text-align: center; }
         }
     </style>
 </head>
@@ -498,18 +313,9 @@
         </nav>
 
         <div id="referrals" class="tabs active">
-            <div class="referral-section" style="margin-bottom: 2rem;">
-                <h3>📊 Network Stats</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h4 id="totalLinks">12</h4>
-                        <p>Active Links</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4 id="totalMembers">1</h4>
-                        <p>Network Members</p>
-                    </div>
-                </div>
+            <div class="stats-grid">
+                <div class="stat-card"><h4 id="totalLinks">12</h4><p>Active Links</p></div>
+                <div class="stat-card"><h4 id="totalMembers">...</h4><p>Network Members</p></div>
             </div>
 
             <div class="hero">
@@ -517,11 +323,15 @@
                 <p>Verified crypto opportunities, staking rewards, and DeFi platforms.</p>
             </div>
 
-            <div class="main-grid">
-                <div class="referral-section">
-                    <h3>⛓️ Crypto Referral Links</h3>
-                    <div class="referral-links-list" id="referralLinksList"></div>
-                </div>
+            <div class="join-form">
+                <h4>➕ Join the Network</h4>
+                <input type="text" id="joinName" placeholder="Enter your username">
+                <button onclick="joinNetwork()">Join Now</button>
+            </div>
+
+            <div class="referral-section">
+                <h3>⛓️ Crypto Referral Links</h3>
+                <div class="referral-links-list" id="referralLinksList"></div>
             </div>
         </div>
 
@@ -531,23 +341,17 @@
                 <p>Connect with members, share opportunities, and grow together!</p>
             </div>
 
-            <div class="community-grid">
-                <div class="community-card">
-                    <h3>🏆 Leaderboard</h3>
-                    <div class="leaderboard-list" id="leaderboardList"></div>
-                </div>
-                <div class="community-card">
-                    <h3>👥 Members</h3>
-                    <div class="members-grid" id="membersList"></div>
-                </div>
+            <div class="community-card">
+                <h3>👥 Members</h3>
+                <div class="members-list" id="membersList"></div>
             </div>
 
-            <div class="community-card" style="margin-bottom: 2rem;">
+            <div class="community-card">
                 <h3>💬 Community Chat</h3>
                 <div class="chat-container">
                     <div class="messages-box" id="messagesBox"></div>
                     <div class="chat-input-group">
-                        <input type="text" id="chatInput" placeholder="Share your thoughts...">
+                        <input type="text" id="chatInput" placeholder="Type your message...">
                         <button onclick="sendMessage()">Send</button>
                     </div>
                 </div>
@@ -557,207 +361,161 @@
         <div id="about" class="tabs">
             <div class="hero">
                 <h2>About This Network</h2>
-                <p>A community dedicated to building passive income through crypto opportunities and referrals.</p>
+                <p>A community dedicated to building passive income through crypto opportunities.</p>
             </div>
             <div class="community-card">
                 <h3>ℹ️ About</h3>
-                <p style="color: #d0d0d0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                    Welcome to the Crypto Passive Income Network! This is a platform where members share verified referral links to crypto platforms, staking pools, and DeFi protocols that generate passive income.
-                </p>
-                <p style="color: #d0d0d0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                    <strong style="color: #ffd700;">How it works:</strong><br>
-                    • Share your favorite crypto opportunities in the referral section<br>
-                    • Invite friends to join your network<br>
-                    • Earn rewards through referral commissions<br>
-                    • Connect with other members in the Community Hub<br>
-                    • Discuss strategies and opportunities with the group
-                </p>
-                <p style="color: #d0d0d0; font-size: 1.1rem; line-height: 1.8;">
-                    <strong style="color: #ffd700;">Disclaimer:</strong> This is for informational purposes only. Do your own research before investing. Crypto investments carry risk.
-                </p>
+                <p style="color:#d0d0d0; line-height:1.8;">Welcome to the Crypto Passive Income Network! Share verified referral links and grow together.</p>
+                <p style="color:#d0d0d0; margin-top:1rem;"><strong style="color:#ffd700;">Disclaimer:</strong> Do your own research. Crypto investments carry risk.</p>
             </div>
         </div>
 
         <footer>
             <p>💎 Building Wealth Together | Passive Income Starts Here</p>
-            <p>Last updated: <span id="lastUpdated">Today</span></p>
         </footer>
     </div>
 
     <script>
-        // Your 12 referral links - saved in localStorage, will NEVER vanish
+        const API_URL = 'https://mrarti3.mrarti3.workers.dev';
+        
         let referrals = [
-            {id: 1, name: "BetFury", url: "https://betfury.io/", description: "Crypto gaming with daily earnings", created_at: "2024-01-01"},
-            {id: 2, name: "Final Autoclaim", url: "https://www.finalauto.info/", description: "Auto-claiming rewards platform", created_at: "2024-01-01"},
-            {id: 3, name: "Chainers.io", url: "https://chainers.io/", description: "Earn crypto from tasks and activities", created_at: "2024-01-01"},
-            {id: 4, name: "Rollercoin", url: "https://rollercoin.com/", description: "Mining simulator game with real rewards", created_at: "2024-01-01"},
-            {id: 5, name: "Cointiply", url: "https://cointiply.com/", description: "Earn cryptocurrency completing tasks", created_at: "2024-01-01"},
-            {id: 6, name: "Freecash", url: "https://freecash.com/", description: "Get paid for surveys and tasks", created_at: "2024-01-01"},
-            {id: 7, name: "Fire Faucet", url: "https://firefaucet.com/", description: "High-paying crypto faucet", created_at: "2024-01-01"},
-            {id: 8, name: "SimpleBits", url: "https://simplebits.io/", description: "Earn BTC from various activities", created_at: "2024-01-01"},
-            {id: 9, name: "Vie Faucet", url: "https://viefaucet.com/", description: "Automated faucet earnings", created_at: "2024-01-01"},
-            {id: 10, name: "Honeygain", url: "https://www.honeygain.com/", description: "Passive income from your internet", created_at: "2024-01-01"},
-            {id: 11, name: "Uprock", url: "https://uprock.com/", description: "Earn from your idle bandwidth", created_at: "2024-01-01"},
-            {id: 12, name: "TraffMonetizer", url: "https://traffmonetizer.com/", description: "Monetize your internet traffic", created_at: "2024-01-01"}
+            {id:1, name:"BetFury", url:"https://betfury.io/", description:"Crypto gaming with daily earnings"},
+            {id:2, name:"Final Autoclaim", url:"https://www.finalauto.info/", description:"Auto-claiming rewards platform"},
+            {id:3, name:"Chainers.io", url:"https://chainers.io/", description:"Earn crypto from tasks and activities"},
+            {id:4, name:"Rollercoin", url:"https://rollercoin.com/", description:"Mining simulator game with real rewards"},
+            {id:5, name:"Cointiply", url:"https://cointiply.com/", description:"Earn cryptocurrency completing tasks"},
+            {id:6, name:"Freecash", url:"https://freecash.com/", description:"Get paid for surveys and tasks"},
+            {id:7, name:"Fire Faucet", url:"https://firefaucet.com/", description:"High-paying crypto faucet"},
+            {id:8, name:"SimpleBits", url:"https://simplebits.io/", description:"Earn BTC from various activities"},
+            {id:9, name:"Vie Faucet", url:"https://viefaucet.com/", description:"Automated faucet earnings"},
+            {id:10, name:"Honeygain", url:"https://www.honeygain.com/", description:"Passive income from your internet"},
+            {id:11, name:"Uprock", url:"https://uprock.com/", description:"Earn from your idle bandwidth"},
+            {id:12, name:"TraffMonetizer", url:"https://traffmonetizer.com/", description:"Monetize your internet traffic"}
         ];
 
-        // Save to localStorage on page load
-        localStorage.setItem('crypto_referrals', JSON.stringify(referrals));
-
-        function loadFromStorage() {
-            const saved = localStorage.getItem('crypto_referrals');
-            if (saved) {
-                referrals = JSON.parse(saved);
+        async function loadMembers() {
+            try {
+                const res = await fetch(`${API_URL}/api/members`);
+                const members = await res.json();
+                displayMembers(members);
+                document.getElementById('totalMembers').innerHTML = members.length;
+            } catch (e) {
+                console.error('Failed to load members', e);
+                document.getElementById('membersList').innerHTML = '<div class="loading">Failed to load members. Please refresh.</div>';
             }
         }
 
-        function saveToStorage() {
-            localStorage.setItem('crypto_referrals', JSON.stringify(referrals));
-        }
-
-        function displayReferrals() {
-            const list = document.getElementById('referralLinksList');
-            if (!list) return;
-            list.innerHTML = '';
-            
-            referrals.forEach(referral => {
-                const div = document.createElement('div');
-                div.className = 'referral-link-item';
-                div.innerHTML = `
-                    <h4>${escapeHtml(referral.name)}</h4>
-                    <p>${escapeHtml(referral.description || '')}</p>
-                    <div class="link-url">
-                        <span>${escapeHtml(referral.url)}</span>
-                        <div class="link-buttons">
-                            <button class="copy-btn" onclick="copyToClipboard('${escapeHtml(referral.url)}')">Copy</button>
-                        </div>
-                    </div>
-                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">Added: ${referral.created_at}</p>
-                `;
-                list.appendChild(div);
-            });
-        }
-
-        function updateStats() {
-            document.getElementById('totalLinks').textContent = referrals.length;
-            document.getElementById('totalMembers').textContent = '1';
-        }
-
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text);
-            alert('Link copied to clipboard!');
-        }
-
-        function escapeHtml(str) {
-            if (!str) return '';
-            return str.replace(/[&<>]/g, function(m) {
-                if (m === '&') return '&amp;';
-                if (m === '<') return '&lt;';
-                if (m === '>') return '&gt;';
-                return m;
-            });
-        }
-
-        // Chat functions
-        let messages = [];
-        
-        function loadMessages() {
-            const saved = localStorage.getItem('chat_messages');
-            if (saved) {
-                messages = JSON.parse(saved);
+        async function loadMessages() {
+            try {
+                const res = await fetch(`${API_URL}/api/messages`);
+                const messages = await res.json();
+                displayMessages(messages);
+            } catch (e) {
+                console.error('Failed to load messages', e);
             }
-            displayMessages();
         }
-        
-        function saveMessages() {
-            localStorage.setItem('chat_messages', JSON.stringify(messages.slice(-50)));
-        }
-        
-        function displayMessages() {
-            const box = document.getElementById('messagesBox');
-            if (!box) return;
-            box.innerHTML = '';
-            
-            if (messages.length === 0) {
-                box.innerHTML = '<p style="color: #888; text-align: center; padding: 2rem;">No messages yet. Say hello!</p>';
+
+        async function joinNetwork() {
+            let nameInput = document.getElementById('joinName');
+            let name = nameInput.value.trim();
+            if(!name) {
+                alert('Please enter a username');
                 return;
             }
             
-            messages.forEach(msg => {
-                const div = document.createElement('div');
-                div.className = 'message';
-                div.innerHTML = `
-                    <div class="message-author">${escapeHtml(msg.author)}</div>
-                    <div class="message-text">${escapeHtml(msg.text)}</div>
-                    <div class="message-time">${msg.time || ''}</div>
-                `;
-                box.appendChild(div);
-            });
-            box.scrollTop = box.scrollHeight;
-        }
-        
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const text = input.value.trim();
-            if (!text) return;
-            
-            let author = localStorage.getItem('chat_name');
-            if (!author) {
-                author = prompt('Enter your display name for chat:');
-                if (!author) return;
-                localStorage.setItem('chat_name', author);
+            try {
+                const res = await fetch(`${API_URL}/api/members`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name })
+                });
+                
+                if(res.ok) {
+                    nameInput.value = '';
+                    await loadMembers();
+                    alert(`Welcome ${name}!`);
+                } else {
+                    const error = await res.json();
+                    alert(error.error || 'Failed to join');
+                }
+            } catch (e) {
+                alert('Failed to join. Please try again.');
             }
-            
-            messages.push({
-                author: author,
-                text: text,
-                time: new Date().toLocaleTimeString()
-            });
-            
-            saveMessages();
-            displayMessages();
-            input.value = '';
         }
 
-        // Members - ONLY YOU
-        let members = [
-            {name: "You", referrals: 12, earnings: "$0", avatar: "👑", role: "Network Owner"}
-        ];
-        
-        function displayLeaderboard() {
-            const list = document.getElementById('leaderboardList');
-            if (!list) return;
-            list.innerHTML = '';
-            members.forEach((m, i) => {
-                const div = document.createElement('div');
-                div.className = 'leaderboard-item';
-                div.innerHTML = `
-                    <div class="leaderboard-rank">👑</div>
-                    <div class="leaderboard-info">
-                        <div class="leaderboard-name">${escapeHtml(m.name)}</div>
-                        <div class="leaderboard-stats">${m.referrals} referrals</div>
-                    </div>
-                    <div class="leaderboard-points">${m.earnings}</div>
-                `;
-                list.appendChild(div);
-            });
+        async function sendMessage() {
+            let input = document.getElementById('chatInput');
+            let text = input.value.trim();
+            if(!text) return;
+            
+            let author = localStorage.getItem('chatName');
+            if(!author) {
+                author = prompt('Enter your name for chat:');
+                if(!author) return;
+                localStorage.setItem('chatName', author);
+            }
+            
+            try {
+                await fetch(`${API_URL}/api/messages`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ author, text })
+                });
+                input.value = '';
+                await loadMessages();
+            } catch (e) {
+                alert('Failed to send message');
+            }
         }
-        
-        function displayMembers() {
-            const list = document.getElementById('membersList');
-            if (!list) return;
-            list.innerHTML = '';
-            members.forEach(m => {
-                const div = document.createElement('div');
-                div.className = 'member-card';
-                div.innerHTML = `
-                    <div class="member-avatar">${m.avatar}</div>
-                    <div class="member-name">${escapeHtml(m.name)}</div>
-                    <div class="member-role">${m.role}</div>
-                    <div class="member-stats">📍 ${m.referrals} Referrals<br>💰 ${m.earnings}</div>
-                `;
-                list.appendChild(div);
+
+        function displayMembers(members) {
+            let html = '';
+            if(members.length === 0) {
+                html = '<div class="loading">No members yet. Be the first to join!</div>';
+            } else {
+                members.forEach(m => {
+                    let role = m.name === 'You' ? 'Network Owner' : 'Member';
+                    let avatar = m.name === 'You' ? '👑' : '👤';
+                    // Show "Founder" for you, joined date for everyone else
+                    let joinInfo = m.name === 'You' ? 'Founder' : `Joined: ${new Date(m.created_at).toLocaleDateString()}`;
+                    html += `<div class="member-item">
+                        <span><strong>${avatar} ${m.name}</strong></span>
+                        <span>${role}</span>
+                        <span>${joinInfo}</span>
+                    </div>`;
+                });
+            }
+            document.getElementById('membersList').innerHTML = html;
+        }
+
+        function displayMessages(messages) {
+            let html = '';
+            if(messages.length === 0) {
+                html = '<div class="loading">No messages yet. Say hello!</div>';
+            } else {
+                messages.slice(-50).forEach(m => {
+                    let authorClass = m.author === 'System' ? 'style="color:#ffd700;"' : '';
+                    html += `<div class="message"><span class="message-author" ${authorClass}>${m.author}:</span> ${m.text}<div style="font-size:0.75rem;color:#888;">${new Date(m.timestamp).toLocaleTimeString()}</div></div>`;
+                });
+            }
+            let box = document.getElementById('messagesBox');
+            if(box) {
+                box.innerHTML = html;
+                box.scrollTop = box.scrollHeight;
+            }
+        }
+
+        function displayReferrals() {
+            let html = '';
+            referrals.forEach(r => {
+                html += `<div class="referral-link-item">
+                    <h4>${r.name}</h4>
+                    <p>${r.description}</p>
+                    <a href="${r.url}" target="_blank" class="click-link">🔗 Click Here to Join ${r.name}</a>
+                </div>`;
             });
+            document.getElementById('referralLinksList').innerHTML = html;
+            document.getElementById('totalLinks').innerHTML = referrals.length;
         }
 
         function switchTab(tabName) {
@@ -767,36 +525,18 @@
             event.target.classList.add('active');
         }
 
-        function updateLastUpdated() {
-            const today = new Date().toLocaleDateString('en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
-            document.getElementById('lastUpdated').textContent = today;
-        }
+        setInterval(() => {
+            loadMessages();
+            loadMembers();
+        }, 5000);
 
-        // Initialize everything
-        loadFromStorage();
-        displayReferrals();
-        updateStats();
-        loadMessages();
-        displayLeaderboard();
-        displayMembers();
-        updateLastUpdated();
-
-        // Chat enter key
-        document.addEventListener('DOMContentLoaded', function() {
-            const chatInput = document.getElementById('chatInput');
-            if (chatInput) {
-                chatInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        sendMessage();
-                    }
-                });
-            }
+        document.getElementById('chatInput')?.addEventListener('keypress', function(e) {
+            if(e.key === 'Enter') sendMessage();
         });
+
+        displayReferrals();
+        loadMembers();
+        loadMessages();
     </script>
 </body>
 </html>
